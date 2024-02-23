@@ -20,9 +20,9 @@ public class Employee  implements Serializable {
     @JsonIgnore
     private String salary;
 //    private String departmentId;
-@ManyToOne
-@JoinColumn(name = "department_id")
-@JsonBackReference
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    @JsonBackReference
     private Department department;
 
     public String getId() {

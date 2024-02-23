@@ -56,4 +56,9 @@ public class DepartmentService {
         employeeRepository.save(employee);
         return departmentRepository.findById(departmentId).get();
     }
+
+    public Optional<Department> getAllDepartmentById(String id) {
+        return departmentRepository.findById(id);
+    }
+
 }

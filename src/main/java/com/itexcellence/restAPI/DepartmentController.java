@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("api/departments")
@@ -40,4 +41,14 @@ public class DepartmentController {
     public void deleteEmployeeInDepartment(@PathVariable String departmentId, @PathVariable String employeeId) {
         departmentService.deleteEmployeeInDepartmentId(departmentId, employeeId);
     }
+
+//    @GetMapping("/getdepartmentsById/{departmentId}")
+//    public Department getdepartmentsById()
+//
+@GetMapping("/{departmentId}")
+public Optional<Department> getAllDepartmentbyId(@PathVariable String departmentId) {
+    return departmentService.getAllDepartmentById(departmentId);
+}
+
+
 }
