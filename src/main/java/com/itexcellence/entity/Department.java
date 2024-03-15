@@ -19,7 +19,7 @@ public class Department implements Serializable {
     private String location;
     @OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
     @JsonManagedReference
-    private List<Employee> employees=new ArrayList<>();
+    private List<Employee> employees;
 
     @Override
     public String toString() {
